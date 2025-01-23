@@ -18,7 +18,7 @@ export class HyperzodAppClient {
                 ) {
                     console.log('Received message from Parent Frame:', event.data);
                     window.removeEventListener('message', messageHandler); // Clean up the listener
-                    resolve(event.data); // Resolve with the received data
+                    resolve(event.data.data); // Resolve with the received data
                 }
             };
 
@@ -44,6 +44,7 @@ export class HyperzodAppClient {
 
     /**
      * Requests user data from the parent window.
+     * Page: Global
      * @returns {Promise} - Resolves with the user data.
      */
     async getUserData() {
@@ -56,6 +57,7 @@ export class HyperzodAppClient {
 
     /**
      * Requests user authentication token from the parent window.
+     * Page: Global
      * @returns {Promise} - Resolves with the auth token data.
      */
     async getAuthToken() {
@@ -64,5 +66,18 @@ export class HyperzodAppClient {
 
         // Wait for the response
         return await this.listenForMessageFromHyperzod('auth_token');
+    }
+
+    /**
+     * Requests active cart data from the parent window.
+     * Page: Checkout
+     * @returns {Promise} - Resolves with the active cart data.
+     */
+    async getActiveCart() {
+        // Send a message to the parent window requesting active cart
+        this.sendMessageToParent('active_cart', null);
+
+        // Wait for the response
+        return await this.listenForMessageFromHyperzod('active_cart');
     }
 }
