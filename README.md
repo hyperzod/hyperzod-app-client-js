@@ -21,5 +21,8 @@ npm install @hyperzod/hyperzod-app-client-js
 CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@hyperzod/hyperzod-app-client-js/hyperzod-app-client.js"></script>
+<script
+  type="module"
+  src="https://cdn.jsdelivr.net/npm/@hyperzod/hyperzod-app-client-js/hyperzod-app-client.js"
+></script>
 ```
