@@ -12,6 +12,14 @@ A JavaScript SDK for building Hyperzod Apps that enables seamless communication 
 
 ## Installation
 
+NPM
+
 ```bash
-npm install hyperzod-app-client-js
+npm install @hyperzod/hyperzod-app-client-js
+```
+
+CDN
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@hyperzod/hyperzod-app-client-js/hyperzod-app-client.js"></script>
 ```

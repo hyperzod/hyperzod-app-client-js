@@ -1,6 +1,6 @@
 {
   "name": "@hyperzod/hyperzod-app-client-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A JavaScript SDK for building Hyperzod Apps that enables seamless communication between Hyperzod and Your Embedded App.",
   "main": "HyperzodAppClient.js",
   "directories": {
