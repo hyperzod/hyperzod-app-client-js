@@ -1,0 +1,22 @@
+{
+  "name": "hyperzod-app-client-js",
+  "version": "1.0.0",
+  "description": "A JavaScript SDK for building Hyperzod Apps that enables seamless communication between Hyperzod and Your Embedded App.",
+  "main": "HyperzodAppClient.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyperzod/hyperzod-app-client-js.git"
+  },
+  "author": "Hyperzod",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hyperzod/hyperzod-app-client-js/issues"
+  },
+  "homepage": "https://github.com/hyperzod/hyperzod-app-client-js#readme"
+}

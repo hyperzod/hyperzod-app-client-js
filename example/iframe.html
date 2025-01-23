@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe</title>
+</head>
+
+<body>
+
+    <h3>Iframe</h3>
+
+    <button id="getUserData">Get User Data</button>
+    <p id="output"></p>
+
+    <script type="module">
+        import { HyperzodAppClient } from '../HyperzodAppClient.js';
+
+        // Initialize the SDK
+        const hyperzodAppClient = new HyperzodAppClient();
+
+        // Helper function to display data
+        function displayData(data) {
+            document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+        }
+
+        // Event listener for the button
+        document.getElementById('getUserData').addEventListener('click', async () => {
+            try {
+                const authToken = await hyperzodAppClient.getAuthToken();
+                displayData(authToken);
+                console.log('getAuthToken', authToken);
+            } catch (error) {
+                console.error('Error:', error.message);
+                displayData({ error: error.message });
+            }
+        });
+    </script>
+
+</body>
+
+</html>

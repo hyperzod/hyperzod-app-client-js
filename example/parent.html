@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent</title>
+</head>
+
+<body>
+    <iframe src="iframe.html" width="100%" height="100%"></iframe>
+
+
+    <script>
+        window.addEventListener('message', (event) => {
+            if (event.data && event.data.channel == 'hyperzod_apps') {
+                if (event.data.type == 'user_data') {
+                    const userData = {
+                        name: 'John Doe',
+                        email: 'john.doe@example.com',
+                        age: 30
+                    }
+                    event.source.postMessage({ channel: 'hyperzod_apps', type: 'user_data', data: userData }, '*');
+                } else if (event.data.type == 'auth_token') {
+                    const authToken = '1234567890';
+                    event.source.postMessage({ channel: 'hyperzod_apps', type: 'auth_token', data: authToken }, '*');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
