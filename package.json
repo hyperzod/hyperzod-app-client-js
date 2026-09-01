@@ -1,13 +1,18 @@
 {
   "name": "@hyperzod/hyperzod-app-client-js",
-  "version": "1.0.1",
-  "description": "A JavaScript SDK for building Hyperzod Apps that enables seamless communication between Hyperzod and Your Embedded App.",
-  "main": "HyperzodAppClient.js",
+  "version": "1.1.0",
+  "description": "A JavaScript SDK for building Hyperzod Apps that enables seamless communication between Hyperzod and Your Embedded App. Includes TenantAppClient for header-based iframe auth (Safari/Incognito safe).",
+  "main": "hyperzod-app-client.js",
   "directories": {
     "example": "example"
   },
+  "type": "module",
+  "exports": {
+    ".": "./hyperzod-app-client.js",
+    "./tenant": "./src/tenant-app-client.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test src/tenant-app-client.test.js"
   },
   "repository": {
     "type": "git",
